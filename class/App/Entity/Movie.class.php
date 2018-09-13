@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Entity;
+
 use App\Utils\DB;
 use App\Utils\DBException;
 
@@ -21,12 +22,13 @@ class Movie
     private $id_director;
 
 
-    public function getDirectorByMovie() : string {
+    public function getDirectorByMovie()
+    {
         $db = new DB();
-        $db->query('SELECT name FROM director JOIN film ON film.id_director=director.id where film.id = ' . $this->id);
+        $db->query('SELECT name FROM director JOIN film ON film.id_director=director.id WHERE film.id = ' . $this->id);
         $res = $db->result('App\Entity\Director');
-        var_dump($res[0]->name);
-return "";
+        $director = $res[0]->name;
+        return $director;
         //return $res[0]->name;
     }
 
@@ -107,5 +109,5 @@ return "";
     {
         return '<b>' . $this->title . '</b> [' . $this->year . ']' . "\n";
     }
-    
+
 }
