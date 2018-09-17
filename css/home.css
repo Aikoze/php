@@ -1,6 +1,6 @@
 
 table{
-    width: 900px;
+    width: 1000px;
 }
 
 h1{
@@ -8,3 +8,31 @@ h1{
     font-size : 20px;
     text-align: center;
 }
+
+.highlight td {
+    background: #e7e7ff;
+    font-weight: bold;
+}
+
+.rating {
+    font-weight: bold;
+}
+
+.goodRev {
+    color: #00cc00;
+}
+
+.midRev {
+    color: #c5d737;
+}
+
+.badRev {
+    color: crimson;
+}
+
+
+#sorttable_sortrevind, #sorttable_sortfwdind {
+    color: blue;
+    font-size: 120%;
+}
+
