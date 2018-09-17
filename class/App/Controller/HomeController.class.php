@@ -3,10 +3,19 @@
 namespace App\Controller;
 
 use App\Utils\DB;
+use App\Utils\DBException;
+use App\Utils\FilmService;
 
 class HomeController {
 
-	public function show() : array {
+    private $service;
+
+    public function __construct()
+    {
+        $this->service = new FilmService();
+    }
+
+    public function show() : array {
 	    $db = new DB();
 	    $db->query('SELECT * FROM  film');
 	    $res = $db->result('App\Entity\Movie');
@@ -45,11 +54,7 @@ class HomeController {
         $films = $db->result('App\Entity\Movie');
         $db->query('SELECT * FROM cesi.type ');
         $types = $db->result('App\Entity\Type');
-        if (isset($_POST)) {
-            $db = new DB();
-            $db->query('INSERT INTO cesi.film(id_director, id_previous, title, title_fr, year, score) VALUES (:id_director, :id_previous, :title, :title_fr, :year, :score)');
-        }
-
+        $this->service->addFilm($_POST);
         return [
             'addMovie',
             [

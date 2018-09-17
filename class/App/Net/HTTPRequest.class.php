@@ -18,7 +18,7 @@ class HTTPRequest {
         $this->accept = isset($_SERVER['HTTP_ACCEPT']) ? $_SERVER['HTTP_ACCEPT'] : null;
         $this->contentType = isset($_SERVER['CONTENT_TYPE']) ? $_SERVER['CONTENT_TYPE'] : null;
         $this->method = isset($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD'] : null;
-        $this->json = (bool) $this->contentType == 'application/json';
+        $this->json = (bool) $this->contentType === 'application/json';
         $this->readInputs();
     }
 

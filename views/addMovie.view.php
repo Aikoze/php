@@ -14,7 +14,7 @@
                 <label for="annee_film">Année</label>
                 <select name="year" class="u-full-width" id="exampleRecipientInput">
                     <?php for ($i = 1895; $i <= 2020; $i++): ?>
-                        <option value="<?= $i ?>"><?= $i ?></option>
+                        <option typeof="year" value="<?= $i ?>"><?= $i ?></option>
                     <?php endfor; ?>
                 </select>
             </div>
@@ -24,17 +24,17 @@
                 <label for="genre_film">Genre</label>
                 <select name="type" class="u-full-width" id="exampleRecipientInput">
                     <?php foreach ($types as $type): ?>
-                        <option value="<?= $type->getName() ?>"><?= $type->getName() ?></option>
+                        <option value="<?= $type->getId() ?>"><?= $type->getName() ?></option>
                     <?php endforeach; ?>
                 </select>
             </div>
             <div class="four columns">
                 <label for="real_film">Réalisateur du film</label>
-                <input name="id_director" class="u-full-width" type="text" placeholder="Théo wisniewski" id="real_film">
+                <input name="director" class="u-full-width" type="text" placeholder="Théo wisniewski" id="real_film">
             </div>
             <div class="two columns">
                 <label for="score_film">Score</label>
-                <input name="" class="u-full-width" type="number" max="10" min="0" placeholder="9" id="score_film">
+                <input name="score" value="5" class="u-full-width" type="number" max="10" min="0" placeholder="9" id="score_film">
             </div>
         </div>
         <input  class="button-primary" type="submit" value="Submit">
