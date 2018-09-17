@@ -987,7 +987,7 @@
     </column>
     <column id="246" parent="232" name="year">
       <Position>6</Position>
-      <DataType>year(4)|0</DataType>
+      <DataType>int(4)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>

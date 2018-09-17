@@ -1,4 +1,7 @@
 
+table{
+    width: 1000px;
+}
 
 h1{
     margin-top: 30px ;
@@ -6,7 +9,30 @@ h1{
     text-align: center;
 }
 
-
-.is-hidden {
-    display: none;
+.highlight td {
+    background: #e7e7ff;
+    font-weight: bold;
 }
+
+.rating {
+    font-weight: bold;
+}
+
+.goodRev {
+    color: #00cc00;
+}
+
+.midRev {
+    color: #c5d737;
+}
+
+.badRev {
+    color: crimson;
+}
+
+
+#sorttable_sortrevind, #sorttable_sortfwdind {
+    color: blue;
+    font-size: 120%;
+}
+
