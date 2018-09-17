@@ -8,7 +8,7 @@
         <th>Année</th>
         <th>Score</th>
         <th>Genre</th>
-        <th>Directeur name</th>
+        <th>Réalisateur</th>
     </tr>
     </thead>
     <tbody>
