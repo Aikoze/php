@@ -16,7 +16,7 @@ class Type
 {
 
     private $id;
-    private $name;
+    public $name;
 
     /**
      * @return mixed

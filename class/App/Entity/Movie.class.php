@@ -32,6 +32,17 @@ class Movie
         //return $res[0]->name;
     }
 
+    public function getTypeByMovie()
+    {
+        $db = new DB();
+        $db->query('SELECT type.name FROM type t, film_as_type fast JOIN film ON film.id=fast.id_film JOIN type ON type.id=fast.id_type WHERE film.id = ' . $this->id);
+        $res = $db->result('App\Entity\Type');
+        $type = $res[1]->name;
+        return $type;
+        //return $res[0]->name;
+    }
+
+
     /**
      * @return mixed
      */

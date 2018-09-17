@@ -1,27 +1,4 @@
-*, *::before, *::after{
-    box-sizing: border-box;
-}
-
-body{
-    font-family: sans-serif;
-}
 
 table{
     width: 900px;
-    border-collapse: collapse;
-}
-
-th, td, tr {
-    padding: 10px;
-    text-align: left;
-    border: solid 1px #CCC;
-}
-
-th{
-    background-color: black;
-    color: #ffffff;
-}
-
-tr:nth-child(old){
-    background-color: white;
 }

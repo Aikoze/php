@@ -1,26 +1,25 @@
 <h1><?= $title ?></h1>
 <p><?= $text ?></p>
-<table align="center">
+<table id="table_id" align="center" class="t">
     <thead>
-    <tr>
         <th>Id</th>
         <th>Titre</th>
         <th>Année</th>
         <th>Score</th>
-        <th>Directeur id</th>
+        <th>Genre</th>
         <th>Directeur name</th>
-    </tr>
     </thead>
     <tbody>
-    <?php foreach ($films as $film): ?>
         <tr>
-            <td><?= $film->getId() ?></td>
-            <td><?= $film->getTitle() ?></td>
-            <td><?= $film->getYear() ?></td>
-            <td><?= $film->getScore() ?></td>
-            <td><?= $film->getIdDirector() ?></td>
-            <td><?= $film->getDirectorByMovie() ?></td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
         </tr>
-    <?php endforeach; ?>
     </tbody>
 </table>
+<script type="javascript">$(document).ready( function () {
+        $('#table_id').DataTable();
+    } );</script>
