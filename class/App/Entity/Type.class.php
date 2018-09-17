@@ -18,6 +18,7 @@ class Type
     private $id;
     public $name;
 
+
     /**
      * @return mixed
      */

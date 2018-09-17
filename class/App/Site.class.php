@@ -15,6 +15,8 @@ class Site {
 
 		Router::addRoute(new Route('GET', '/', 'Home', 'show'));
 		Router::addRoute(new Route('GET', '/other', 'Home', 'other'));
+		Router::addRoute(new Route('GET', '/addMovie', 'Home', 'addMovie'));
+        Router::addRoute(new Route('POST', '/addMovie', 'Home', 'submitMovie'));
 		Router::addRoute(new Route('GET', '/other/{name:[\w]+}/id/{id:[\d]+}', 'Home', 'other'));
 
 		$this->req = new HTTPRequest();

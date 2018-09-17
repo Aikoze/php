@@ -1,5 +1,9 @@
-<h1><?= $title ?></h1>
-<h1><?= $text ?></h1>
+<div class="container">
+    <h1><?= $title ?></h1>
+    <h1><?= $text ?></h1>
+    <p id="demo"></p>
+    <a class="button" href="addMovie">Ajouter un film</a>
+</div>
 <table id="filmTable" align="center" class="t">
     <thead>
     <tr>
@@ -8,7 +12,7 @@
         <th>Année</th>
         <th>Genre</th>
         <th>Réalisateur</th>
-        <th>score</th>
+        <th>Score</th>
     </tr>
     </thead>
     <tbody>
