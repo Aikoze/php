@@ -22,25 +22,6 @@ class Movie
     private $id_director;
 
 
-    public function getDirectorByMovie() : string
-    {
-        $db = new DB();
-        $db->query('SELECT name FROM director JOIN film ON film.id_director=director.id WHERE film.id = ' . $this->id);
-        $res = $db->result('App\Entity\Director');
-        return count($res) > 0 ? $res[0]->name : '';
-    }
-
-    public function getTypeByMovie() : string
-    {
-        $db = new DB();
-        $db->query('SELECT type.name FROM type t, film_as_type fast JOIN film ON film.id=fast.id_film JOIN type ON type.id=fast.id_type WHERE film.id = ' . $this->id);
-        $res = $db->result('App\Entity\Type');
-        $type = $res[1]->name;
-        return $type;
-
-    }
-
-
     /**
      * @return mixed
      */
@@ -117,6 +98,25 @@ class Movie
     public function __toString()
     {
         return '<b>' . $this->title . '</b> [' . $this->year . ']' . "\n";
+    }
+
+
+    public function getDirectorByMovie() : string
+    {
+        $db = new DB();
+        $db->query('SELECT name FROM director JOIN film ON film.id_director=director.id');
+        $res = $db->result('App\Entity\Director');
+        return count($res) > 0 ? $res[0]->name : '';
+    }
+
+    public function getTypeByMovie() : string
+    {
+        $db = new DB();
+        $db->query('SELECT type.name FROM type t, film_as_type fast JOIN film ON film.id=fast.id_film JOIN type ON type.id=fast.id_type');
+        $res = $db->result('App\Entity\Type');
+        $type = $res[0]->name;
+        return $type;
+
     }
 
 }

@@ -8,15 +8,16 @@ class DirectorException extends \Exception
 
 class Director
 {
-    public $DirectorName;
+    public $directorName;
+    private $id_director;
 
     /**
      * @param mixed $DirectorName
      * @return Director
      */
-    public function setDirectorName($DirectorName) : string
+    public function setDirectorName($directorName) : string
     {
-        $this->DirectorName = $DirectorName;
+        $this->directorName = $directorName;
         return $this;
     }
 
@@ -25,6 +26,23 @@ class Director
      */
     public function getDirectorName() : string
     {
-        return $this->DirectorName;
+        return $this->directorName;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getIdDirector()
+    {
+        return $this->id_director;
+    }
+
+    /**
+     * @param mixed $id_director
+     */
+    public function setIdDirector($id_director): void
+    {
+        $this->id_director = $id_director;
+    }
+
 }

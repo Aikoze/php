@@ -8,11 +8,17 @@
 
 namespace App\Utils;
 
+use App\Entity\Director;
+use App\Entity\Movie;
+use App\Entity\MovieAsType;
+use App\Entity\Type;
 use App\Utils;
 
 
 class FilmService
 {
+
+
     public function addFilm($data)
     {
         if (count($data) > 0) {
@@ -47,5 +53,27 @@ class FilmService
             $db->query('UPDATE cesi.director SET name=:name WHERE id=:id');
         }
     }
+
+    public function getDirectorByMovie() : string
+    {
+        $db = new DB();
+        $db->query('SELECT name FROM director JOIN film ON film.id_director=director.id');
+        $res = $db->result('App\Entity\Director');
+        return count($res) > 0 ? $res[0]->getName : '';
+    }
+
+    public function getTypeByMovie() : string
+    {
+        $db = new DB();
+        $db->query('SELECT type.name FROM type t, film_as_type fast JOIN film ON film.id=fast.id_film JOIN type ON type.id=fast.id_type');
+        $res = $db->result('App\Entity\Type');
+        $type = $res[0]->getName;
+        return $type;
+
+    }
+
+
+
+
 
 }
